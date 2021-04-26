@@ -54,9 +54,6 @@ class App extends React.Component {
             </Grid>
           </Router>
         { /*< WorldMap/>*/}
-        dcccccccccvcx
-        xv
-        vxxxxxxx
         </div>
        
       </div>
