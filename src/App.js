@@ -26,7 +26,7 @@ class App extends React.Component {
       horizontal={false}
       >
       <div style={{ height: '100%', width: '100%',/* paddingBlockStart: '15px',*/ position: 'fixed', backgroundColor: "#FEF5E7" }}>
-        <h4 style={{ color: '#85929E', textAlign: "center", fontSize:"2.5vw", marginTop: "1vw", marginBottom: "1vw" }}>India covid update</h4>
+        <h4 style={{ color: '#85929E', textAlign: "center", fontSize:"2.5vw", marginTop: "1vw", marginBottom: "1vw" }}>India Covid Update</h4>
         <br />
        
         <div>
