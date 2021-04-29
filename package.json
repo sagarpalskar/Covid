@@ -24,6 +24,7 @@
     "react-intl": "^5.15.8",
     "react-jvectormap": "0.0.16",
     "react-leaflet": "^3.1.0",
+    "react-native": "^0.64.0",
     "react-native-responsive-fontsize": "^0.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

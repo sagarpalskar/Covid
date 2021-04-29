@@ -78,12 +78,18 @@ class map extends React.Component {
 
   handleshow2 = (e, el, code) => {
     var res = code.replace("IN-", "");
-    el.html(el.html() +
-      `<br>
-      <br> Confirmed cases: ${this.getdata(res).confirmed}<br>
-      <br> Active cases: ${this.getdata(res).active}<br>
-      <br> Deaths cases: ${this.getdata(res).deaths}<br>`
-    );
+    if(this.getdata(res) == undefined){
+       el.html(el.html() +
+      `<br> Not Found <br>`
+    );}
+    else{
+        el.html(el.html() +
+          `<br>
+          <br> Confirmed cases: ${this.getdata(res).confirmed}<br>
+          <br> Active cases: ${this.getdata(res).active}<br>
+          <br> Deaths cases: ${this.getdata(res).deaths}<br>`
+        );
+    }
   };
   async componentDidMount() {
     await axios.get('https://api.covid19india.org/data.json')
@@ -100,7 +106,7 @@ class map extends React.Component {
       <div>
       <ToastContainer />
 
-      <VectorMap map={'ca_lcc'}
+      <VectorMap 
         map={"in_mill"}
         backgroundColor="#FEF5E7"
         focusOn={{
@@ -112,7 +118,7 @@ class map extends React.Component {
         zoomOnScroll={true}
         containerStyle={{
           width: "100%",
-          height: "45vw"
+          height: "580px"
         }}
         onRegionClick={this.handleClick} //gets the country code
         onRegionTipShow={this.handleshow2}

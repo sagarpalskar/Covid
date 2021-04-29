@@ -40,13 +40,13 @@ class TotalCase extends React.Component {
         return (
             <div>
                 <ToastContainer />
-                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '60%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
+                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '100%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
 
-                    <Typography style={{ color: 'orange'/*'#85929E'*/,fontSize:"1.3vw" }}> Record Date {this.state.date}</Typography>
-                    <Typography style={{fontSize:"1.2vw"}}>  Total Confirm Cases:- {this.state.totalConfirmeCase}</Typography>
-                    <Typography style={{/* color: 'orange'*/ fontSize:"1.2vw"}}> Total Active Case:-   {this.state.totalActiveCase}</Typography>
-                    <Typography style={{ color: 'green',fontSize:"1.2vw" }}>Total Recovered Case:-  {this.state.totalRecoveredCase}</Typography>
-                    <Typography style={{ color: 'red',fontSize:"1.2vw" }}>Total Death Case:-        {this.state.totalDeathCase}</Typography>
+                    <Typography style={{ color: 'orange'/*'#85929E'*/,fontSize:"1.5vw", marginBottom: "1vw" }}> Record Date {this.state.date}</Typography>
+                    <Typography style={{fontSize:"1.5vw"}}>  Total Confirm Cases:- {this.state.totalConfirmeCase}</Typography>
+                    <Typography style={{/* color: 'orange'*/ fontSize:"1.5vw"}}> Total Active Case:-   {this.state.totalActiveCase}</Typography>
+                    <Typography style={{ color: 'green',fontSize:"1.5vw" }}>Total Recovered Case:-  {this.state.totalRecoveredCase}</Typography>
+                    <Typography style={{ color: 'red',fontSize:"1.5vw" }}>Total Death Case:-        {this.state.totalDeathCase}</Typography>
 
                 </Paper>
             </div>

@@ -68,7 +68,7 @@ class detailed extends React.Component {
         return (
             <div style={{ fontSize: "1.3vw" }}>
                       <ToastContainer />
-                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '60%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
+                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '110%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
 
                     {/* <InputLabel id="demo-simple-select-outlined"style={{fontSize:"1vw"}}>State Name  </InputLabel><br />*/}
                     <Typography style={{ fontSize: "1.2vw" }}> State Name </Typography>
@@ -128,10 +128,10 @@ class detailed extends React.Component {
 
                     </Select>
 
-                    <Typography style={{ /*color: 'yellow' */fontSize: "1.3vw" }}> Confirme Cases: {this.state.confirmeCase}</Typography>
-                    <Typography style={{ /*color: 'orange'*/fontSize: "1.3vw" }}>  Active Case: {this.state.activeCase}</Typography>
-                    <Typography style={{ color: 'green', fontSize: "1.3vw" }}>Recovered Case: {this.state.recoveredCase}</Typography>
-                    <Typography style={{ color: 'red', fontSize: "1.3vw" }}>Death Case: {this.state.deathCase}</Typography>
+                    <Typography style={{ /*color: 'yellow' */fontSize: "1.5vw" }}> Confirme Cases: {this.state.confirmeCase}</Typography>
+                    <Typography style={{ /*color: 'orange'*/fontSize: "1.5vw" }}>  Active Case: {this.state.activeCase}</Typography>
+                    <Typography style={{ color: 'green', fontSize: "1.5vw" }}>Recovered Case: {this.state.recoveredCase}</Typography>
+                    <Typography style={{ color: 'red', fontSize: "1.5vw" }}>Death Case: {this.state.deathCase}</Typography>
                 </Paper>
             </div>
         )
