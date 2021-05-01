@@ -4,8 +4,21 @@ import Select from '@material-ui/core/Select';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
-import Typography from '@material-ui/core/Typography';
+//import Typography from '@material-ui/core/Typography';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import {
+    createMuiTheme,
+    responsiveFontSizes,
+    MuiThemeProvider,
+    Typography
+  } from "@material-ui/core";
+  
+  let theme = createMuiTheme();
+  theme = responsiveFontSizes(theme);
+  const confirmCases = "Confirm Cases:- ";
+  const activeCase = "Active Case:- ";
+  const recoveredCase = "Recovered Case:- ";
+  const deathCase = "Death Case:- ";
 
 class detailed extends React.Component {
     constructor(props) {
@@ -66,16 +79,17 @@ class detailed extends React.Component {
 
     render() {
         return (
-            <div style={{ fontSize: "1.3vw" }}>
-                      <ToastContainer />
-                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '110%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
-
+            <div >
+                <ToastContainer />
+                <Paper elevation={9} style={{ padding: '1vw', borderRadius: '1vw', width: '120%',/* background: 'linear-gradient(to bottom left,#FC3409 10% ,#F8E4E2 80%)'*/ }} >
+                <MuiThemeProvider theme={theme}>
                     {/* <InputLabel id="demo-simple-select-outlined"style={{fontSize:"1vw"}}>State Name  </InputLabel><br />*/}
-                    <Typography style={{ fontSize: "1.2vw" }}> State Name </Typography>
+                    <Typography variant="body2" gutterBottom/*style={{ fontSize: "1.2vw" }}*/> State Name </Typography>
 
-                    <Select style={{ width: "20vw", borderRadius: '20vw', height: '4vw', }}
+                    <Select style={{ /*width: "90%"*/ borderRadius: '20vw', height: '50px', }}
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
+                        fullWidth
                         value={this.state.cityName}
                         onChange={this.handleChange}
                         //  label="City Name"
@@ -88,23 +102,27 @@ class detailed extends React.Component {
                         {
                             this.state.countryData.map((data, i) => (
                                 <MenuItem value={data[0]}>
-                                    <div style={{ fontSize: "1.3vw" }}>
+                                   {/* <div style={{ fontSize: "1.3vw" }}>
                                         {data[0]}
-                                    </div>
+                                       </div>*/}
+                                    <Typography variant="caption" gutterBottom >  {data[0]}</Typography>
+
                                 </MenuItem>
                             ))}
                         <MenuItem value="">
-                            <div style={{ fontSize: "1.3vw" }}> None  </div>
+                        <Typography variant="caption" gutterBottom >None</Typography>
+                           {/* <div style={{ fontSize: "1.3vw" }}> None  </div>*/}
                         </MenuItem>
 
                     </Select><br />
 
-                    <Typography style={{ fontSize: "1.2vw" }}> District Name  </Typography>
+                    <Typography variant="body2" gutterBottom /*style={{ fontSize: "1.2vw" }}*/> District Name  </Typography>
 
                     {/* <InputLabel id="demo-simple-select-outlined" style={{fontSize:"1vw"}}>District Name  </InputLabel><br />*/}
-                    <Select style={{ width: '20vw', borderRadius: '20vw', height: '4vw', }}
+                    <Select style={{ /*width: '20vw',*/ borderRadius: '20vw', height: '50px', }}
                         labelId="demo-simple-select-outlined"
                         id="demo-simple-select-outlined"
+                        fullWidth
                         value={this.state.age}
                         onChange={this.handleChange1}
                         //    label="District Name"
@@ -117,21 +135,28 @@ class detailed extends React.Component {
                         {
                             this.state.districtData.map((data, i) => (
                                 <MenuItem value={data[0]}>
-                                    <div style={{ fontSize: "1.3vw" }}>
+                                    {/*<div style={{ fontSize: "1.3vw" }}>
                                         {data[0]}
-                                    </div>
+                                       </div>*/}
+                                    <Typography variant="caption" gutterBottom >  {data[0]}</Typography>
                                 </MenuItem>
                             ))}
                         <MenuItem value="">
-                            <div style={{ fontSize: "1.3vw" }}> None </div>
+                        <Typography variant="caption" gutterBottom >None</Typography>
+                            {/*<div style={{ fontSize: "1.3vw" }}> None </div>*/}
                         </MenuItem>
 
                     </Select>
+                    <Typography variant="body2" gutterBottom >{confirmCases} {this.state.confirmeCase}</Typography>
+                    <Typography variant="body2" gutterBottom >{activeCase} {this.state.activeCase}</Typography>
+                    <Typography variant="body2" gutterBottom style={{ color: 'green'}}>{recoveredCase} {this.state.recoveredCase}</Typography>
+                    <Typography variant="body2" gutterBottom style={{ color: 'red'}}>{deathCase} {this.state.deathCase}</Typography>
 
-                    <Typography style={{ /*color: 'yellow' */fontSize: "1.5vw" }}> Confirme Cases: {this.state.confirmeCase}</Typography>
-                    <Typography style={{ /*color: 'orange'*/fontSize: "1.5vw" }}>  Active Case: {this.state.activeCase}</Typography>
+                   { /*<Typography style={{ fontSize: "1.5vw" }}> Confirme Cases: {this.state.confirmeCase}</Typography>
+                    <Typography style={{ fontSize: "1.5vw" }}>  Active Case: {this.state.activeCase}</Typography>
                     <Typography style={{ color: 'green', fontSize: "1.5vw" }}>Recovered Case: {this.state.recoveredCase}</Typography>
-                    <Typography style={{ color: 'red', fontSize: "1.5vw" }}>Death Case: {this.state.deathCase}</Typography>
+                    <Typography style={{ color: 'red', fontSize: "1.5vw" }}>Death Case: {this.state.deathCase}</Typography>*/}
+                    </MuiThemeProvider>
                 </Paper>
             </div>
         )
